@@ -5,16 +5,17 @@
 * Grafana — платформа для визуализации и создания дашбордов.
 * Node Exporter — агент для сбора метрик ОС (CPU, RAM, Disk, Network).
 * Docker & Docker Compose — контейнеризация и оркестрация.
-  \
+  
 # Архитектура системы
 * Node Exporter собирает низкоуровневые метрики хоста и отдает их по порту 9100.
 * Prometheus по заданному интервалу (15s) опрашивает (pull модель) Node Exporter и сохраняет данные.
 * Grafana подключается к Prometheus как к источнику данных (Data Source) и отображает их на графиках.
 # Быстрый старт
+
 __1. Подготовка окружения__
-\
+
 Создайте файл с переменными окружения для безопасности Grafana:
-\
+
 ```cp dc-prom+graf.env.example dc-prom+graf.env #Отредактируйте пароль администратора в dc-prom+graf.env```
 
 __2. Запуск стека__
@@ -22,8 +23,10 @@ __2. Запуск стека__
 ```docker-compose up -d```
 
 __3. Доступ к интерфейсам__
-Grafana: http://localhost:3000 (логин: admin, пароль из вашего .env)
-Prometheus: http://localhost:9090
+
+* __Grafana:__ http://localhost:3000 (логин: admin, пароль из вашего .env)
+
+* __Prometheus:__ http://localhost:9090
 # Особенности конфигурации
 __Безопасность:__ Пароль администратора Grafana не хранится в коде, а передается через Docker Environment Variables.
 \
