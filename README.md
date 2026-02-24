@@ -24,6 +24,6 @@ docker-compose up -d
 Grafana: http://localhost:3000 (логин: admin, пароль из вашего .env)
 Prometheus: http://localhost:9090
 # Особенности конфигурации
-Безопасность: Пароль администратора Grafana не хранится в коде, а передается через Docker Environment Variables./
-Persistence: Использование Docker Volumes для сохранения данных Grafana (настройки и дашборды не сбрасываются при перезапуске)./
+Безопасность: Пароль администратора Grafana не хранится в коде, а передается через Docker Environment Variables.\
+Persistence: Использование Docker Volumes для сохранения данных Grafana (настройки и дашборды не сбрасываются при перезапуске).\
 Custom Config: Prometheus настроен на автоматический сбор метрик с самого себя и с Node Exporter через внутреннюю сеть Docker.
