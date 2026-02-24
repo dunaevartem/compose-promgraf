@@ -15,12 +15,10 @@ Grafana подключается к Prometheus как к источнику да
 bash
 cp dc-prom+graf.env.example dc-prom+graf.env
 # Отредактируйте пароль администратора в dc-prom+graf.env
-Используйте код с осторожностью.
 
 # 2. Запуск стека
 bash
 docker-compose up -d
-Используйте код с осторожностью.
 
 # 3. Доступ к интерфейсам
 Grafana: http://localhost:3000 (логин: admin, пароль из вашего .env)
