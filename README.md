@@ -1,24 +1,25 @@
 # Prometheus & Grafana Monitoring Stack
 Репозиторий содержит готовую конфигурацию для развертывания системы мониторинга инфраструктуры на базе Docker Compose. Проект позволяет в один клик поднять связку для сбора и визуализации метрик сервера.
 # Технологический стек
-Prometheus — система сбора и хранения метрик (Time Series DB).
-Grafana — платформа для визуализации и создания дашбордов.
-Node Exporter — агент для сбора метрик ОС (CPU, RAM, Disk, Network).
-Docker & Docker Compose — контейнеризация и оркестрация.
-Архитектура системы
-Node Exporter собирает низкоуровневые метрики хоста и отдает их по порту 9100.
-Prometheus по заданному интервалу (15s) опрашивает (pull модель) Node Exporter и сохраняет данные.
-Grafana подключается к Prometheus как к источнику данных (Data Source) и отображает их на графиках.
+* Prometheus — система сбора и хранения метрик (Time Series DB).
+* Grafana — платформа для визуализации и создания дашбордов.
+* Node Exporter — агент для сбора метрик ОС (CPU, RAM, Disk, Network).
+* Docker & Docker Compose — контейнеризация и оркестрация.
+  \
+# Архитектура системы
+* Node Exporter собирает низкоуровневые метрики хоста и отдает их по порту 9100.
+* Prometheus по заданному интервалу (15s) опрашивает (pull модель) Node Exporter и сохраняет данные.
+* Grafana подключается к Prometheus как к источнику данных (Data Source) и отображает их на графиках.
 # Быстрый старт
 __1. Подготовка окружения__
+\
 Создайте файл с переменными окружения для безопасности Grafana:
-bash
-cp dc-prom+graf.env.example dc-prom+graf.env
-Отредактируйте пароль администратора в dc-prom+graf.env
+\
+```cp dc-prom+graf.env.example dc-prom+graf.env #Отредактируйте пароль администратора в dc-prom+graf.env```
 
 __2. Запуск стека__
 
-docker-compose up -d
+```docker-compose up -d```
 
 __3. Доступ к интерфейсам__
 Grafana: http://localhost:3000 (логин: admin, пароль из вашего .env)
